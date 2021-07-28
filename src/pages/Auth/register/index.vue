@@ -17,12 +17,14 @@ export default defineComponent({
   },
   computed: {
     showBack() {
+      let currentRoute: any = this.$route.name 
       let showRoutes = ["kwetsbaar", "bevestiging"];
-      return showRoutes.indexOf(this.$route.name) !== -1;
+      return showRoutes.indexOf(currentRoute) !== -1;
     },
     headerTitle() {
+      let currentRoute: any = this.$route.name || 'none'
       let showRoutes = ["kwetsbaar", "bevestiging"];
-      return showRoutes.indexOf(this.$route.name) === -1 ? "Een thuiskok zoeken" : "Regelmatige Maaltijdservice +";
+      return showRoutes.indexOf(currentRoute) === -1 ? "Een thuiskok zoeken" : "Regelmatige Maaltijdservice +";
     },
   },
 });
