@@ -2,7 +2,9 @@
   <section>
     <authNavbar :showBack="showBack" :title="headerTitle" />
     <div class="container">
-      <router-view></router-view>
+      <transition :name="transitionName">
+        <router-view></router-view>
+      </transition>
     </div>
   </section>
 </template>
@@ -15,16 +17,30 @@ export default defineComponent({
   components: {
     authNavbar,
   },
+  data() {
+    return {
+      transitionName: "",
+    };
+  },
   computed: {
     showBack() {
-      let currentRoute: any = this.$route.name 
+      let currentRoute: any = this.$route.name;
       let showRoutes = ["kwetsbaar", "bevestiging"];
       return showRoutes.indexOf(currentRoute) !== -1;
     },
     headerTitle() {
-      let currentRoute: any = this.$route.name || 'none'
+      let currentRoute: any = this.$route.name || "none";
       let showRoutes = ["kwetsbaar", "bevestiging"];
-      return showRoutes.indexOf(currentRoute) === -1 ? "Een thuiskok zoeken" : "Regelmatige Maaltijdservice +";
+      return showRoutes.indexOf(currentRoute) === -1
+        ? "Een thuiskok zoeken"
+        : "Regelmatige Maaltijdservice +";
+    },
+  },
+  watch: {
+    $route(to, from) {
+      const toDepth = to.path.split("/").length;
+      const fromDepth = from.path.split("/").length;
+      this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
     },
   },
 });
