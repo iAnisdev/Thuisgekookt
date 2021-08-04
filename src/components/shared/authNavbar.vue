@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="container-fluid pt-3 py-2">
+    <div class="container-fluid pt-2">
       <div class="row px-2 justify-content-between">
         <div class="col-4 mr-auto text-left pt-2">
           <img src="@/assets/images/logo.svg" />
@@ -8,7 +8,7 @@
         </div>
         <div class="col-auto">
           <div class="row-end justify-content-end">
-            <div class="mt-2 pr-2" v-if="showBack">
+            <div class="mt-2 pr-2" v-if="showBack" @click="goBack">
                 <svg xmlns="http://www.w3.org/2000/svg" width="67.812" height="20" viewBox="0 0 67.812 20">
                   <g id="Group_122" data-name="Group 122" transform="translate(-115.094 -714)">
                     <text id="Terug" transform="translate(137.906 730)" fill="#636363" font-size="17" font-family="Rubik-Regular, Rubik"><tspan x="0" y="0">Terug</tspan></text>
@@ -42,6 +42,11 @@ export default defineComponent({
     title:{
       type: String,
       required: true
+    }
+  },
+  methods:{
+    goBack() :  void{
+      this.$router.go(-1)
     }
   }
 });

@@ -34,8 +34,8 @@
       </div>
       <div class="text-center pt-5">
         <button @click="validateInfo">
-          bekijk het aanbod
-          <img src="@/assets/images/forward.svg" class="ml-4" />
+            bekijk het aanbod &nbsp; &nbsp; &nbsp; &nbsp;
+            <img src="@/assets/images/forward.svg" class="ml-4" />
         </button>
       </div>
     </section>
