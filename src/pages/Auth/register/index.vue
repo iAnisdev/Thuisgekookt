@@ -25,7 +25,7 @@ export default defineComponent({
   computed: {
     showBack() {
       let currentRoute: any = this.$route.name;
-      let showRoutes = ["kwetsbaar", "bevestiging"];
+      let showRoutes = ["aanbod" , "kwetsbaar", "bevestiging"];
       return showRoutes.indexOf(currentRoute) !== -1;
     },
     headerTitle() {

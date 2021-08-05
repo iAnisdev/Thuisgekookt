@@ -24,6 +24,11 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "bevestiging",
+  methods:{
+    validateInfo(): void{
+      this.$router.push({name: 'home'})
+    }
+  }
 });
 </script>
 

@@ -1,6 +1,6 @@
 <template>
-  <section class="page">
-    <div class="container">
+  <section class="page ">
+    <div class="container text-center">
       <h6>Straatnaam 235</h6>
       <h6>1000 AB Amsterdam</h6>
       <h5>
@@ -9,8 +9,8 @@
         aanbod:
       </h5>
     </div>
-    <div>
-      <div class="card pt-3 px-4">
+    <div class="card-section">
+      <div class="choice-card pt-3 px-4">
         <div class="row">
           <div class="col-2">
             <input
@@ -33,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="card pt-3 px-4">
+      <div class="choice-card pt-3 px-4">
         <div class="row">
           <div class="col-2">
             <input
@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <div class="card pt-3 px-4">
+      <div class="choice-card pt-3 px-4">
         <div class="row">
           <div class="col-2">
             <input
@@ -121,8 +121,11 @@ h5 {
   text-align: center;
   color: #636363;
 }
-
-.card {
+.card-section{
+  max-width: 600px;
+  margin: auto;
+}
+.choice-card {
   border-radius: 21px;
   background: #fff;
   margin-top: 5px;
